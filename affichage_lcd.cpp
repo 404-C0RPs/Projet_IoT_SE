@@ -1,4 +1,4 @@
-#include <Arduino.h>
+#include "Arduino.h"
 #include <Wire.h>
 
 #include "b_projet_iot.h"
@@ -18,7 +18,7 @@ void affichage_heure(uint8_t valeurHeure, uint8_t valeurMinute){
     moduleLCD.print(valeurHeure);
     moduleLCD.print(":");
     if(valeurMinute < 10){
-        moduleLCD.print("0"); 
+        moduleLCD.print("0");
         moduleLCD.print(valeurMinute);
     }else{
         moduleLCD.print(valeurMinute);
@@ -33,7 +33,7 @@ void afficher_temperature_TMP36(){
 void afficher_humidite_HIH4030(float valeurTemperature){
     moduleLCD.print("H:");
     moduleLCD.print(lecture_capteur_humidite_HIH4030(valeurTemperature),1);
-    moduleLCD.print("% "); 
+    moduleLCD.print("% ");
 }
 int allumer_ecran_LCD(){
     moduleLCD.setRGB(ROUGE, VERT, BLEU);
